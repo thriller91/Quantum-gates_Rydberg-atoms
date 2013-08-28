@@ -1,0 +1,412 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     14717,        403]
+NotebookOptionsPosition[     14267,        382]
+NotebookOutlinePosition[     14625,        398]
+CellTagsIndexPosition[     14582,        395]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"clock", " ", "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "10"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "10"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "10"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "10"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "10"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "10"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"7", ",", "9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"7", ",", "10"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"8", ",", "10"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"8", ",", "9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"9", ",", "9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"9", ",", "10"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"10", ",", "10"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"10", ",", "9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"11", ",", "9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"11", ",", "10"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"12", ",", "10"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"12", ",", "9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"13", ",", "9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"13", ",", "10"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"14", ",", "10"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"14", ",", "9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"15", ",", "9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"15", ",", "10"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"16", ",", "10"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"16", ",", "9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"17", ",", "9"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"periodicity", " ", "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "7"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "7"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "8"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"13", ",", "8"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"13", ",", "7"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"17", ",", "7"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"delaypulse", " ", "=", 
+   RowBox[{"{", " ", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "6"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "6"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"17", ",", "5"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"invdelaypulse", " ", "=", 
+   RowBox[{"{", " ", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "3"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"17", ",", "4"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"delayedpulse", " ", "=", 
+   RowBox[{"{", " ", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"7", ",", "2"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"7", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"17", ",", "1"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sig", "=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "delaypulse", ",", "clock", ",", "periodicity", ",", "delayedpulse"}], 
+      "}"}], ",", 
+     RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+     RowBox[{"Axes", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"True", ",", "False"}], "}"}]}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", "Thick"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"All", ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "11"}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Time\>\"", ",", "None"}], "}"}]}], ",", 
+     RowBox[{"LabelStyle", "\[Rule]", "Bold"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"invsig", "=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{
+     RowBox[{"{", "invdelaypulse", "}"}], ",", 
+     RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+     RowBox[{"Axes", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"True", ",", "False"}], "}"}]}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"DotDashed", ",", "Thick"}], "]"}]}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"All", ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "11"}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Time\>\"", ",", "None"}], "}"}]}], ",", 
+     RowBox[{"LabelStyle", "\[Rule]", "Bold"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", 
+  RowBox[{"sig", ",", "invsig"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.586624698427603*^9, 3.586624758826799*^9}, {
+  3.586624938542795*^9, 3.586624941484486*^9}, {3.586626991962504*^9, 
+  3.586627007265089*^9}, {3.586664100948162*^9, 3.5866641170419407`*^9}, {
+  3.586664918884111*^9, 3.5866649778979177`*^9}, {3.586665110181169*^9, 
+  3.58666526659623*^9}, {3.586665310760795*^9, 3.586665563080929*^9}, {
+  3.5866657394519*^9, 3.5866659402554283`*^9}, {3.586666014215173*^9, 
+  3.5866662009550743`*^9}, {3.586666557235627*^9, 3.586666596468176*^9}, {
+  3.586667020488963*^9, 3.58666705862444*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], Thickness[Large], 
+      LineBox[{{0., 5.}, {1., 5.}, {1., 6.}, {5., 6.}, {5., 5.}, {17., 5.}}]}, 
+     {RGBColor[0.6, 0.24, 0.4428931686004542], Thickness[Large], 
+      LineBox[CompressedData["
+1:eJxTTMoPSmViYGBQAmIQjQqUHCD0B3vsfBUon8EBOx+mngMHH6ZeAAcfpl4E
+Bx+mXgIHH6ZeBgcfpl4BB1+JAK1CgIapU8PBh6nTwMGHqdfCwYep18HBh6nX
+w8GHqTfAwYepN4TzAZ+AHNM=
+       "]]}, 
+     {RGBColor[0.6, 0.5470136627990908, 0.24], Thickness[Large], 
+      LineBox[{{0., 7.}, {1., 7.}, {1., 8.}, {13., 8.}, {13., 7.}, {17., 
+       7.}}]}, 
+     {RGBColor[0.24, 0.6, 0.33692049419863584`], Thickness[Large], 
+      LineBox[{{0., 1.}, {5., 1.}, {5., 2.}, {7., 2.}, {7., 1.}, {17., 
+       1.}}]}}, {}}, {{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], Thickness[Large], 
+      Dashing[{0, Small, Small, Small}], 
+      LineBox[{{0., 4.}, {1., 4.}, {1., 3.}, {5., 3.}, {5., 4.}, {17., 
+       4.}}]}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, False},
+  AxesLabel->{
+    FormBox["\"Time\"", TraditionalForm], None},
+  AxesOrigin->{0, 0},
+  LabelStyle->Bold,
+  Method->{},
+  PlotRange->{All, {0, 11}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.586666585831394*^9, 3.586666597174189*^9}, {
+   3.5866670405240107`*^9, 3.586667059388967*^9}, 3.586709808768022*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"twopulses", " ", "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"8", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"8", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"12", ",", "1"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pls", "=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"twopulses", ",", 
+     RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", "Thick"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"All", ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "11"}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Time\>\"", ",", "\"\<Electric potential (V)\>\""}], 
+       "}"}]}], ",", 
+     RowBox[{"LabelStyle", "\[Rule]", "Bold"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ion", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"1", "+", 
+      RowBox[{"7", "*", 
+       RowBox[{"Sqrt", "[", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"t", "-", "6.5"}], ")"}], "/", "2"}], "]"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "12"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"ColorData", "[", 
+          RowBox[{"1", ",", "\"\<ColorList\>\""}], "]"}], "[", 
+         RowBox[{"[", "2", "]"}], "]"}], ",", "Thick"}], "]"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", 
+  RowBox[{"pls", ",", "ion"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.586676398266666*^9, 3.5866764228685417`*^9}, {
+  3.586676483907634*^9, 3.586676501597805*^9}, {3.58667658140946*^9, 
+  3.586676593543572*^9}, {3.5866766251839437`*^9, 3.586676758001767*^9}, {
+  3.5866769892095957`*^9, 3.586677066743815*^9}, {3.586677160278686*^9, 
+  3.586677319212728*^9}, {3.586677363130539*^9, 3.586677363748945*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, {}, 
+     {RGBColor[0.24720000000000014`, 0.24, 0.6], Thickness[Large], 
+      LineBox[{{0., 1.}, {1., 1.}, {1., 4.}, {3., 4.}, {3., 1.}, {6., 1.}, {
+       6., 4.}, {8., 4.}, {8., 1.}, {12., 1.}}]}}, {}}, {{}, {}, 
+    {RGBColor[0.6, 0.24, 0.4428931686004542], Thickness[Large], 
+     LineBox[CompressedData["
+1:eJwVkHtUzGkAhqeLZlQ0mZHZ7zeNZmr65hdFbSGy88o1l1iUSByxSW5hUQ27
+2k0kaSpFtNRxSReXSGtaMbUjE6Ic9yWkXEa2UmJ0pln7x3ue8/z5vNLI9XN/
+suRwOIu+7X9+kO8Jk3AI2JoZ/rInHUr7Ll5N8DdfMuiVf8zSTuVwY4fZyZqg
+RWgVFWTxSTnT/Gj8cy7BpoLzk/I6e5Rr+lWrCu0IVpf3Lm7Z+EWZalekWe9A
+cNHX3BKgMSqLHTM+jxYQJFlUinY8/qq8MSTejzOEIK4g6VRKU6/S1i2oTC0h
+QOzY1sozJqWHh3d7mIwgxu5to0tinzJo5HeeUneC+VlK5dhpZuXugHenyjwJ
+ujN4V5dGcHAqsPF1vDdBDoqDAso5uD5N4xboR7B5x/r2+1wL2ISk5N8NIOCP
+PrhQfdICO9eyB7tmEBwcfvtlrd4Sxzc5PvhrNsH4qvxfz9hbQRdvFCTNI3Cn
+8Ql9wVawTq5LF4YTrMyOGhF4xwq/HVm1yy+GIK/kVVi51hqB4VFtwesImrfV
+2InN1rASLf8xeiPBUK1AHRHQD0kZi5nDCQS5LpdXlVzoh+Sk2Wc5qQTlQwdr
+n+bYICXG7+HNEoJ0tSlfMoaH6dQnoPUswaBRp30jVvFg2+JV0HeB4OqVN5f6
+H+JhT4RitfdlAsPs53KtkYe9cxhzzq1vfTOt5zhf6A/1KAsa+YFg4IAn53V8
+O8zpMqWqOgmC9KLiyrF2cDz3tWP/p2//tkc/CFlhh0y2u/K6iWBKW5MuqcIO
+WeI3wZ4DGUiybzX0hdojx7J+yxcvBqX+dbu6Uwbgj9sHa/fFMuh+qHXNrHaA
+WAOr7J8ZcFq9eWebHZB37K3ycByDGzp72R0LPg7HjdEU7mBwb0H0fJWMj1zZ
+oxKtmkFgsca3MZKP7C1DMj6eY1As9DRdes5HmiQnPLSTAe8f9m7wLUdsX5fV
+4bxRjGGz3M+FqASYXuP9rGmzGKqGxwk+uwQQOTXUHY0Xo2Pt7gCbLAHKq+yP
+SRPFmHypoCezWACDfXKIXC1GSVH1homPBQgriascfkaM+vq6r3w/IXzfRiSN
+M4ix4colev+1EO+XKUQLI51hMJ12EoxyQqrJYN0UJUH2+pgDvGsiVLZNbR+4
+aChOHrrpoHtN8EA+pnmsmwuCJlnmrmwQI5pdPiLrhAu03CEvfC5LUB0arpog
+kcJmlrQt3dcF34cZioQFUnAKVcdyHaRY8/uUh+MZGdam64wbG6XYHcX7apEl
+Q0zFh63NyTJUOS8zG4Su8Pz3OG/KRFdo+pKtPPa54vyODNPQNlfcvjDRkObo
+hpNuF5lFeW645hJVuzfTDQ8/GHf9MFGOpD9DCl7ayuFtPVVgeizHYtnTJeFp
+cuz81OGQGueO3ooRzDCuO/bro2aE8yi2Wb27lf2LO45lzJt8MYPCyc1/mZxD
+Uf9kd2aPTIGt60K7beMpmBm2kf6FCohHrdC7qyh0kZZMYpECWtOGvMDtFDzh
+5Fx9iQK2aWmTEhIpNnM7W0PPKXCkRLf/XQrF4CMN1bEaBWrf+vjpD1HwRabM
+3JsKCJc7bNl5mWIrrRRo2xXQeDhPL7hCMa618ADnowJLPnpIqrQUPs39XqFb
+gVOJU2q7dRRlTEiD9osC4/K3O62op6ibx+desWAR+ex9RWATRezRiK7TAhbc
+E8Y9S15QtN/r32MYzKJ0DXdpQjNFYunwaipi0dMr455/TWF/zaksX8xiD1m0
+QNpO8XT7D8Z0OYsRzSuHje+ksH22bMJNyuJe0WZzWBfFDbJtro0HC4l/RqH6
+M0VD1b07Ki8Wf3OOqkqNFM33fQIqRrKI1pfO1vdSePlc39Dhw8JeXenaYqIQ
+5RbEevixKFug/2w2U8TXNY5ZMZrFfxPEX0A=
+      "]]}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox["\"Time\"", TraditionalForm], 
+    FormBox["\"Electric potential (V)\"", TraditionalForm]},
+  AxesOrigin->{0, 0},
+  LabelStyle->Bold,
+  Method->{},
+  PlotRange->{All, {0, 11}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.58667726180588*^9, 3.5866772875906687`*^9}, 
+   3.5866773199525433`*^9, 3.5866773641437798`*^9, 3.586709812025282*^9}]
+}, Open  ]]
+},
+WindowSize->{1091, 631},
+WindowMargins->{{128, Automatic}, {76, Automatic}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 6896, 196, 471, "Input"],
+Cell[7478, 220, 1442, 31, 232, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8957, 256, 2496, 69, 131, "Input"],
+Cell[11456, 327, 2795, 52, 258, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
